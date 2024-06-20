@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourav Mandal - Personal Portfolio</title>
+    <meta name="description" content="Sourav Mandal's personal portfolio showcasing projects, skills, education, and certifications in computer science, web development, and machine learning.">
+    <meta name="keywords" content="Sourav Mandal, personal portfolio, computer science, web development, machine learning, cybersecurity, projects, resume, CV">
+    <meta name="author" content="Sourav Mandal">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+            animation: fadeIn 2s ease-in-out;
+            background-image: url('Images/an.png');
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        header nav ul li a:hover {
+            background: #fda085;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            animation: fadeUp 1.5s ease-in-out;
+            background-image: url('Images/xh.jpng');
+
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+        }
+
+        section h2 {
+            border-bottom: 3px solid #333;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .intro-contact-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 1rem;
+        }
+
+        .intro, .contact-info {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .intro-img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            animation: rotateIn 1.5s ease-in-out;
+        }
+
+        .intro-img:hover {
+            transform: rotate(360deg);
+        }
+
+        @media (max-width: 768px) {
+            .intro-contact-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .intro, .contact-info {
+                max-width: 90%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-360deg);
+            }
+            to {
+                transform: rotate(0);
+            }
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: #ffffff;
+        }
+        .dark-mode section {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode header, .dark-mode footer {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        #loader {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            z-index: 10000;
+            background: transparent;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        window.addEventListener("load", function() {
+            document.getElementById("loader").style.display = "none";
+        });
+    </script>
+</head>
+<body>
+    <div id="loader"></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="index.html#achievements">Achievements</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="toggle-container">
+            <label class="toggle">
+                <input type="checkbox" onclick="toggleDarkMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="intro-contact-wrapper">
+            <div class="intro">
+                <center><img src="Images/Sourav.jpg" alt="Sourav Mandal" class="intro-img">
+                <h1>Sourav Mandal</h1>
+                <p>Welcome to my personal portfolio!</p></center>
+            </div>
+            <div class="contact-info">
+                <center><p>Email: <a href="mailto:manaranjanmandal2019@gmail.com">manaranjanmandal2019@gmail.com</a></p>
+                <p>Phone: +91 8101508737</p>
+                <p>Location: Bankura, West Bengal</p>
+                <p><a href="https://www.linkedin.com/in/souravman1" target="_blank">LinkedIn</a> | <a href="https://github.com/sourav-mandal8737" target="_blank">GitHub</a></p></center>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate and detail-oriented Computer Science Engineering student, currently pursuing my B.Tech at the Institute of Engineering and Management. My focus areas include Cyber Security, Web Development, Machine Learning, competitive programming, and Software Development. I thrive on challenges and enjoy working on projects that push the boundaries of what is possible with technology.</p>
+        <p>With a strong foundation in programming languages such as C++, C, Java, and Python, I have developed a diverse skill set that allows me to tackle various aspects of computer science and software engineering. I am particularly interested in the intersection of security and machine learning, and I aim to contribute to this field through innovative solutions and rigorous research.</p>
+        <p>In addition to my technical skills, I am an avid learner who is always looking to expand my knowledge and stay updated with the latest advancements in technology. I believe in the power of teamwork and collaboration, and I strive to bring a positive and proactive attitude to every project I undertake.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills and Expertise</h2>
+        <ul>
+            <li>Programming Languages: C++, C, Java, Python</li>
+            <li>Software Tools and Packages: Scikit-Learn, TensorFlow, Pandas, NumPy, Seaborn, Matplotlib</li>
+            <li>Cyber Security</li>
+            <li>Machine Learning</li>
+            <li>Front-End Web Development</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Institute Of Engineering and Management</strong><br>
+                B. TECH. in Computer Science and Engineering, Expected completion in 2025<br>
+                CGPA: 9.06 (up to 5th semester)
+            </li>
+            <li>
+                <strong>Bibarda Satchidananda Vidyapith (H.S)</strong><br>
+                Higher Secondary, Completed in 2020<br>
+                Percentage: 96.2%
+            </li>
+            <li>
+                <strong>Bibarda Satchidananda Vidyapith (H.S)</strong><br>
+                Madhyamik, Completed in 2018<br>
+                Percentage: 91.29%
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>Fake News Prediction Using NLP and ML</strong><br>
+                April 2023 - June 2023<br>
+                <a href="https://github.com/sourav-mandal8737/Fake-News-Prediction" target="_blank">Github Link</a><br>
+                Created a system that can detect whether the news is fake or not using Logistic Regression binary Classification algorithm, NLTK for text processing, and Tf-idf vectorizer.
+            </li>
+            <li>
+                <strong>2048 Game Using HTML, CSS and Javascript</strong><br>
+                October 2023 - December 2023<br>
+                <a href="https://github.com/sourav-mandal8737/2048-Game" target="_blank">Github Link</a><br>
+                Created a fully functional 2048 game using HTML for structure, CSS for styling, and JavaScript for dynamic functionality.
+            </li>
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>
+                <strong>I became a topper in an NPTEL course named Data Analytics with Python</strong><br>
+                <a href="Certificates/Data Analytics with Python Nptel certificate.pdf" target="_blank">View Certificate</a> | <a href="Certificates/Data Analytics with Python Nptel certificate.pdf" download>Download Certificate</a>
+            </li>
+            <li>
+                <strong>NPTEL has recognized me as an NPTEL DISCIPLINE STAR</strong><br>
+                <a href="Certificates/nptelstar.pdf" target="_blank">View Certificate</a> | <a href="Certificates/nptelstar.pdf" download>Download Certificate</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you have any questions or would like to discuss potential collaborations, please feel free to reach out to me. I am always open to networking opportunities and would love to connect with like-minded professionals in the field.</p>
+        <p>Email: <a href="mailto:manaranjanmandal2019@gmail.com">manaranjanmandal2019@gmail.com</a></p>
+        <p>Phone: +91 8101508737</p>
+        <p><a href="https://www.linkedin.com/in/souravman1" target="_blank">LinkedIn</a> | <a href="https://github.com/sourav-mandal8737" target="_blank">GitHub</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sourav Mandal</p>
+    </footer>
+</body>
+</html>
